@@ -3,4 +3,4 @@ FROM alpine:3.20.2
 RUN apk add samba && mkdir /media/storage && chmod 0777 /media/storage
 COPY smb.conf /etc/samba/smb.conf
 RUN adduser -D smbuser && echo -e "smbuser\nsmbuser" | smbpasswd -a -s smbuser
-ENTRYPOINT ["smbd","-i"]
+ENTRYPOINT ["sh", "-c", "smbd && wait"]
