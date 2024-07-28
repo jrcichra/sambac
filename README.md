@@ -1,2 +1,2 @@
-# samba-docker
+# sambac
 A simple multiarch samba sidecar container
